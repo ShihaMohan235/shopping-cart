@@ -12,6 +12,8 @@ Node js with version greater than 10 should be installed.
 
 Run `npm install` to install all the dependencies and add npm to PATH.
 
+Run `npm audit fix` if in case it shows any audit errors
+
 Run `npm install -g @angular/cli` to install angular cli.
 
 Run `ng serve` for a dev server. 
