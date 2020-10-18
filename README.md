@@ -5,13 +5,13 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Prerequisites
 
-Node js with version greater than 6 should be installed
+Node js with version greater than 10 should be installed
 
 
 ## Development server
 
-Run `npm install` to install all the dependencies
+Run `npm install` to install all the dependencies and add npm to PATH.
 
-Run `ng serve` for a dev server. 
+Run `npm install -g @angular/cli` to install angular cli.
 
-Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
