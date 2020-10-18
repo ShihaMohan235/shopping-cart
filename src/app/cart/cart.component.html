@@ -1,0 +1,59 @@
+<div class="row">
+  <div class="col col-12">
+    <h2>Cart</h2>
+  </div>
+</div>
+<div class="row" *ngIf="!emptyCart">
+  <div class="cart-item col col-12 col-md-8">
+    <h3>MY CART</h3>
+    <hr>
+    <a class="p1 text-danger" (click)="clearCart()">Clear Cart</a>
+    <div class="card my-3" *ngFor="let item of cartItems">
+      <div class="card-body d-flex justify-content-between align-items-center">
+        <div class="d-flex">
+          <img [alt]="item.name" width="100" height="100" [src]="item.productimg">
+          <div class="d-block pl-5">
+            <h3 class="mb-0">{{ item.name }}</h3>
+            <h6>Quantity:
+              <button class="btn btn-outline-info px-2 py-0 mr-1"
+                (click)="decrementQuantityFromCart(item.id, item.quantity)">-</button>
+              {{ item.quantity }}
+              <button class="btn btn-outline-info px-2 py-0 ml-1"
+                (click)="incrementQuantityFromCart(item.id, item.quantity)">+</button>
+            </h6>
+            <p class="currency mb-2">{{ item.price | currency:'INR' }}</p>
+            <a class="p1 text-danger" (click)="removeItemFromCart(item)">Remove item</a>
+          </div>
+        </div>
+        <div>
+          <p class="p1">Delivery in 2-3 days | <span class="text-success">Free</span></p>
+          <p class="p1">7 Days Replacement Policy</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col col-12 col-md-4">
+    <h3>PRICE DETAILS</h3>
+    <hr>
+    <div class="card">
+      <div class="card-body">
+        <div *ngFor="let data of priceDetailsArray">
+          <p class="currency mb-0 pb-3">Price ({{ data.quantity }} items): {{ data.price | currency:'INR' }}</p>
+          <h5 class="pb-3">Total: {{ data.quantity*data.price | currency:'INR'}}</h5>
+        </div>
+        <hr>
+        <h6>Delivery Charges: <span class="text-success">Free</span></h6>
+        <hr>
+        <h5 class="text-dark">Grand Total: {{ totalPrice | currency:'INR' }}</h5>
+        <button class="btn btn-outline-secondary" (click)="buyItemFromCart()"><i class="material-icons">shop</i>Proceed
+          to buy</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row" *ngIf="emptyCart">
+  <div class="cart-item col col-12 text-center">
+    <h4>Your cart is Empty</h4>
+    <h5><a class="text-info" routerLink="/">Shop for today's deals</a></h5>
+  </div>
+</div>

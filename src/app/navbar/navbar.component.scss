@@ -1,0 +1,27 @@
+.cart-button {
+  color: #fff;
+
+  i.material-icons {
+    color: #fff;
+    padding-right: 4px;
+  }
+}
+
+.navbar {
+  background-color: #775c6f;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.search-bar {
+  background-color: #fff;
+  border-radius: 10px;
+
+  input {
+    border: 0;
+    outline: none;
+    box-shadow: none;
+  }
+}

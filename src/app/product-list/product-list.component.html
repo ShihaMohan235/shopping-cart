@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="alert-snackbar" *ngIf="elementAddedToCart">
+    <b>Item added to cart!!</b>
+  </div>
+  <div class="col col-12">
+    <h2 class="mb-4">Products</h2>
+  </div>
+  <div class="product-list col col-12 col-md-4  mb-4" *ngFor="let product of products">
+    <div class="card flex-md-row h-100" [title]="product.name+' details'">
+      <div class="card-body d-flex flex-column align-items-start">
+        <img [alt]="product.name" width="100" height="100" [src]="product.productimg">
+        <h3 class="pb-1">
+          {{product.name}}
+        </h3>
+        <p class="card-text mb-auto">{{product.description | slice:0:60}}...</p>
+      </div>
+      <div class="d-flex flex-column justify-content-between card-cta-block px-2 py-5">
+        <button class="btn btn-outline-light" [routerLink]="['/product', product.id]"><i
+            class="material-icons">info</i>Details</button>
+        <button class="btn btn-outline-light" (click)="addingToCart(product)"><i
+            class="material-icons">shopping_cart</i>Cart</button>
+        <button class="btn btn-outline-light" (click)="buyItem(product)"><i class="material-icons">shop</i>Buy</button>
+      </div>
+    </div>
+  </div>
+</div>

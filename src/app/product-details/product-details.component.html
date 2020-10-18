@@ -1,0 +1,73 @@
+<div class="row">
+  <div class="alert-snackbar" *ngIf="elementAddedToCart">
+    <b>Item added to cart!!</b>
+  </div>
+  <div class="col col-12">
+    <h2>Product Details</h2>
+  </div>
+</div>
+<div class="row">
+  <div class="pt-5 product-details col col-12" *ngIf="productdetails">
+    <div class="container">
+      <div class="row">
+        <div class="col col-12 col-md-4">
+          <img class="w-100" [alt]="productdetails.name" [src]="productdetails.productimg">
+        </div>
+        <div class="col col-12 col-md-5">
+          <h3>{{ productdetails.name }}</h3>
+          <div class="text-warning">
+            <span class="material-icons">
+              star
+            </span>
+            <span class="material-icons">
+              star
+            </span>
+            <span class="material-icons">
+              star
+            </span>
+            <span class="material-icons">
+              star
+            </span>
+            <span class="material-icons">
+              star_border
+            </span>
+            <span class="text-secondary pl-5">{{ productdetails.rating }} | 16 ratings</span>
+          </div>
+          <hr>
+          <h5><span class="text-dark">Price:</span> {{ productdetails.price | currency:'INR' }}</h5>
+          <p class="pb-4 p1">Inclusive of all taxes</p>
+          <p><span class="material-icons text-info">
+              find_replace
+            </span> 10 days replacement policy</p>
+          <p><span class="material-icons text-info">
+              local_shipping
+            </span> Safe delivery</p>
+          <p><span class="material-icons text-info">
+              verified_user
+            </span> Verified Product</p>
+          <hr>
+          <h5 class="text-dark">About this item</h5>
+          <p>{{ productdetails.description }}</p>
+        </div>
+        <div class="col col-12 col-md-3">
+          <div class="card">
+            <div class="card-body">
+              <button class="btn btn-outline-dark mb-2" (click)="addingToCart(productdetails)">
+                <i class="material-icons">shopping_cart</i>
+                Add to cart
+              </button>
+              <button class="btn btn-outline-dark mb-5" (click)="AddingToBuy(productdetails)">
+                <i class="material-icons">shop</i>
+                Buy Now
+              </button>
+              <p><span class="material-icons">lock
+                </span>Secure transaction</p>
+              <p><span class="material-icons">location_on
+                </span>Delivery location</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

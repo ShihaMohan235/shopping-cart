@@ -1,0 +1,39 @@
+.product-list {
+  a {
+    text-decoration: none;
+  }
+
+  .card {
+    transition: transform 0.2s ease-in-out;
+    background-color: #fff;
+    border-radius: 5px;
+    min-height: 310px;
+
+    &:hover {
+      transform: scale(1.04);
+
+      .card-cta-block {
+        opacity: 1;
+      }
+    }
+
+    .card-cta-block {
+      background-color: #b9a1b2;
+      opacity: 0.7;
+      transition: opacity 0.2s ease-in-out;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.alert-snackbar {
+  padding: 15px;
+  background-color: #b9a1b2;
+  position: absolute;
+  right: 40%;
+  border-radius: 10px;
+  opacity: 0.7;
+}
